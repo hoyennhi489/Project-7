@@ -1,0 +1,118 @@
+:root {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2b2b2b;
+  background: #f7f9fc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e6eef9 0%, #fbfbff 100%);
+}
+
+.app-shell {
+  max-width: 760px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 18px 50px rgba(76, 89, 119, 0.08);
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.top-bar h1 {
+  margin: 0;
+  font-size: 1.7rem;
+}
+
+.search-input {
+  width: 220px;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #d4d9e6;
+}
+
+.note-form {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.field-group {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.field-group label {
+  font-size: 0.95rem;
+  color: #606f88;
+}
+
+.note-form input,
+.note-form textarea {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border-radius: 14px;
+  border: 1px solid #dce1ea;
+  font-size: 1rem;
+  background: #f8fbff;
+}
+
+.note-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.primary-button,
+.delete-button {
+  border: none;
+  border-radius: 14px;
+  padding: 0.95rem 1.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.primary-button {
+  background: #2e76ff;
+  color: #ffffff;
+}
+
+.delete-button {
+  background: #ff5656;
+  color: #ffffff;
+  margin-top: 1rem;
+}
+
+.note-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.note-card {
+  padding: 1.25rem;
+  border-radius: 18px;
+  border: 1px solid #edf1f7;
+  background: #fcfdff;
+}
+
+.note-card h2 {
+  margin-top: 0;
+}
+
+.empty-state {
+  color: #7a8399;
+  padding: 1.25rem;
+  border-radius: 16px;
+  background: #f3f6fb;
+}
