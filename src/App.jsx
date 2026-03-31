@@ -2,16 +2,17 @@ import { useState } from 'react';
 
 function App() {
   const [notes, setNotes] = useState([
-    { title: 'Buy coffee', body: 'Remember to get 2 packs of milk coffee' },
-    { title: 'Call mom', body: 'Ask about weekend dinner plans' }
+    { id: 1, title: 'Buy coffee', body: 'Remember to get 2 packs of milk coffee' },
+    { id: 2, title: 'Call mom', body: 'Ask about weekend dinner plans' }
   ]);
+
   const [noteTitle, setNoteTitle] = useState('');
   const [noteBody, setNoteBody] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
 
   const visibleNotes = notes.filter((note) =>
-    note.title.toLowerCase().includes(searchTerm.toLowerCase())
-      || note.body.toLowerCase().includes(searchTerm.toLowerCase())
+    note.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    note.body.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const handleAddNote = () => {
@@ -20,6 +21,7 @@ function App() {
     }
 
     const newNote = {
+      id: Date.now(),
       title: noteTitle,
       body: noteBody
     };
@@ -29,8 +31,8 @@ function App() {
     setNoteBody('');
   };
 
-  const handleDelete = (title) => {
-    setNotes(notes.filter((note) => note.title !== title));
+  const handleDelete = (id) => {
+    setNotes(notes.filter((note) => note.id !== id));
   };
 
   return (
@@ -75,10 +77,10 @@ function App() {
           <div className="empty-state">No matching notes found.</div>
         ) : (
           visibleNotes.map((note) => (
-            <article key={note.title} className="note-card">
+            <article key={note.id} className="note-card">
               <h2>{note.title}</h2>
               <p>{note.body}</p>
-              <button className="delete-button" onClick={() => handleDelete(note.title)}>
+              <button className="delete-button" onClick={() => handleDelete(note.id)}>
                 Delete
               </button>
             </article>
