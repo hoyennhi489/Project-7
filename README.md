@@ -11,3 +11,17 @@ To fix this, I added a unique **id** to each note when it is created. Then I upd
 After making these changes, the application can now delete the correct note even when multiple notes have the same title.
 
 Today I learned how important unique identifiers are when working with lists in React, and how they help manage state and rendering more reliably.
+
+---
+
+### Learning Journal – Day 2
+
+Today I continued working on my Simple Notes App and improved the code.
+
+I learned that even when the app works correctly, the code can still be written better. I updated the way state is handled by using the previous state to avoid problems when React updates multiple times.
+
+I also added input validation. If the user only enters spaces, the note will not be created. In addition, I disabled the “Add Note” button when the input is not valid.
+
+I also updated the delete function to use the same state update approach, which makes the code more stable.
+
+Today I understood that writing code is not just about making it work, but also making it clear, safe, and easy to use.

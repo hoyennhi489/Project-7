@@ -16,17 +16,16 @@ function App() {
   );
 
   const handleAddNote = () => {
-    if (!noteTitle || !noteBody) {
-      return;
-    }
+    if (!noteTitle.trim() || !noteBody.trim()) return;
 
     const newNote = {
       id: Date.now(),
-      title: noteTitle,
-      body: noteBody
+      title: noteTitle.trim(),
+      body: noteBody.trim()
     };
 
-    setNotes([newNote, ...notes]);
+    setNotes((prevNotes) => [newNote, ...prevNotes]);
+
     setNoteTitle('');
     setNoteBody('');
   };
@@ -34,6 +33,8 @@ function App() {
   const handleDelete = (id) => {
     setNotes(notes.filter((note) => note.id !== id));
   };
+
+  const canSaveNote = noteTitle.trim() && noteBody.trim();
 
   return (
     <main className="app-shell">
@@ -67,7 +68,7 @@ function App() {
           />
         </div>
 
-        <button className="primary-button" onClick={handleAddNote}>
+        <button type="button" className="primary-button" onClick={handleAddNote} disabled={!canSaveNote}>
           Add Note
         </button>
       </section>
